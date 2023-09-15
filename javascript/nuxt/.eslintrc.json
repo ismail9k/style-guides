@@ -1,0 +1,26 @@
+{
+  "extends": [
+    // Basic ESLint recommended rules.
+    "eslint:recommended",
+    // Recommended Nuxt.js rules.
+    "@nuxtjs/eslint-config",
+    // Rules for ES6+ import/export syntax and enforcing grouping and ordering.
+    "plugin:import/recommended",
+    // Disables conflicting ESLint rules that Prettier covers.
+    "prettier"
+  ],
+  // Sets the environment, enabling global variables for browsers and Node.js.
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  // Using default ESLint parser as Nuxt.js is based on Vue.js and JavaScript.
+  "plugins": ["import", "prettier"],
+  // No TypeScript, so no special resolver settings needed.
+  "rules": {
+    // Enforces Prettier formatting rules.
+    "prettier/prettier": "error",
+    // Enforces import order and alphabetizes them.
+    "import/order": ["error", { "alphabetize": { "order": "asc" } }]
+  }
+}

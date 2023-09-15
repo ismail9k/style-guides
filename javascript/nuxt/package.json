@@ -1,0 +1,18 @@
+{
+  "name": "parkos-nuxtjs-project",
+  "version": "1.0.0",
+  "description": "Project description",
+  "scripts": {
+    "lint": "eslint '**/*.{js,vue}'",
+    "lint:fix": "eslint --fix '**/*.{js,vue}'"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-nuxt": "^0.5.0",
+    "@nuxtjs/eslint-config": "^6.0.1",
+    "prettier": "^2.4.1"
+  }
+}

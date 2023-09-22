@@ -10,7 +10,13 @@ To solve this issue, it is important to establish standardized code style config
 
 ## Proposed Solutions
 
-To address this issue, we should have a shared ESLint configuration for each technology/stack used in the company. The idea is to have a minimal configuration agreed upon for this proposal, and then iterate to add new rules and plugins for each new feature that needs to be addressed independently.
+The goal is to have a minimal eslintrc configuration that should be used for each technology/stack in the company.
+
+For each project, use the respective eslintrc and prettierrc config files as the base configurations. You can extend the eslint plugins by adding more plugins based on your use case, but you cannot remove any from the main configurations.
+
+For each project, the main prettierrc configurations should not be edited or have additional rules added to them.
+
+If we agree that a certain eslint plugin is necessary for all teams, we include it in the main configurations file.
 
 ## Contribution
 

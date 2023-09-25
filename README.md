@@ -39,3 +39,4 @@ We execute Prettier through ESLint by enforcing its rules, so there is no need t
 
 * We did not agree on testing framework for all teams, that's why I did not include Jest plugin in all examples
 * If we agreed on avoid using prettier we should remove if from all the configurations files
+* I will prepare a KDD for this proposal into our engineering handbook

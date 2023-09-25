@@ -10,25 +10,32 @@ To solve this issue, it is important to establish standardized code style config
 
 ## Proposed Solutions
 
-The goal is to have a minimal eslintrc configuration that should be used for each technology/stack in the company.
+The goal is to have an ESLint configuration that can be used for each technology/stack in the company, as well as a Prettier configuration.
+To include the respective ESLint configuration file for each project, and use the common Prettier configuration.
 
-For each project, use the respective eslintrc and prettierrc config files as the base configurations. You can extend the eslint plugins by adding more plugins based on your use case, but you cannot remove any from the main configurations.
-
-For each project, the main prettierrc configurations should not be edited or have additional rules added to them.
-
-If we agree that a certain eslint plugin is necessary for all teams, we include it in the main configurations file.
-
-## Contribution
+## Updates and Contribution
 
 If anyone has a suggestion or addition to update the current configuration, they can create a new pull request to apply the change. The pull request should be accepted by ALL team leads before it is merged and becomes part of our standard
 
-## Prettier
+### ESlint
 
-We execute Prettier through ESLint by enforcing its rules, so there is no need to run a separate Prettier check. However, should we get rid of Prettier compatibility? Although ESLint can handle both code quality and formatting rules, configuring formatting solely through ESLint is generally more verbose. Plus, you may miss out on some of Prettier's opinionated but consistent formatting
-
-## Stacks
+Different proposals for each stack
 
 * [NodeJs - TypeScript](/typescript/node)
 * [NuxtJs - TypeScript](/typescript/nuxt)
 * [NodeJs - JavaScript](/javascript/node)
 * [NuxtJs - JavaScript](/javascript/nuxt)
+
+### Prettier
+
+We execute Prettier through ESLint by enforcing its rules, so there is no need to run a separate Prettier check. However, should we get rid of Prettier compatibility? Although ESLint can handle both code quality and formatting rules, configuring formatting solely through ESLint is generally more verbose. Plus, you may miss out on some of Prettier's opinionated but consistent formatting
+
+* Avoid using it
+* [default](/prettier/default.prettierrc.json)
+* [option 1](/prettier/option-1.prettierrc.json)
+* [option 2](/prettier/option-2.prettierrc.json)
+
+## Things to consider
+
+* We did not agree on testing framework for all teams, that's why I did not include Jest plugin in all examples
+* If we agreed on avoid using prettier we should remove if from all the configurations files

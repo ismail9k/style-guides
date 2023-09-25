@@ -1,11 +1,11 @@
 {
   "extends": [
-    // Basic ESLint recommended rules.
-    "eslint:recommended",
-    // Recommended Nuxt.js rules.
+    // Arbinb base configurations
+    "airbnb-base",
+    // Recommended Nuxt.js rules for typescript.
     "@nuxtjs/eslint-config",
-    // Rules for ES6+ import/export syntax and enforcing grouping and ordering.
-    "plugin:import/recommended",
+    // Accessibility rules for Vue.js.
+    "plugin:vuejs-accessibility/recommended",
     // Disables conflicting ESLint rules that Prettier covers.
     "prettier"
   ],
@@ -15,12 +15,17 @@
     "node": true
   },
   // Using default ESLint parser as Nuxt.js is based on Vue.js and JavaScript.
-  "plugins": ["import", "prettier"],
+  "plugins": ["vuejs-accessibility", "prettier"],
   // No TypeScript, so no special resolver settings needed.
   "rules": {
+    // Disapley requiring file extension in importing
+    "import/extensions": 0,
     // Enforces Prettier formatting rules.
     "prettier/prettier": "error",
     // Enforces import order and alphabetizes them.
-    "import/order": ["error", { "alphabetize": { "order": "asc" } }]
+    "import/order": [
+      "error",
+      { "alphabetize": { "order": "asc" }, "newlines-between": "always" }
+    ]
   }
 }

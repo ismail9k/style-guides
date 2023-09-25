@@ -1,0 +1,40 @@
+{
+  "extends": [
+    // Basic ESLint recommended rules.
+    "eslint:recommended",
+    // Recommended Nuxt.js rules for typescript
+    "@nuxtjs/eslint-config-typescript",
+    // TypeScript specific rules.
+    "plugin:@typescript-eslint/recommended",
+    // Accessibility rules for Vue.js.
+    "plugin:vuejs-accessibility/recommended",
+    // Rules for ES6+ import/export syntax and enforcing grouping and ordering.
+    "plugin:import/recommended",
+    // Disables conflicting ESLint rules that Prettier covers.
+    "prettier"
+  ],
+  // Sets the environment, enabling global variables for Node.js and browsers.
+  "env": {
+    "node": true,
+    "browser": true
+  },
+  // Helps ESLint understand TypeScript files.
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint",
+    "import",
+    "vuejs-accessibility",
+    "prettier"
+  ],
+  // Important for TypeScript's complex module resolution.
+  "settings": { "import/resolver": "typescript" },
+  "rules": {
+    // Enforces Prettier formatting rules.
+    "prettier/prettier": "error",
+    // Enforces import order and alphabetizes them.
+    "import/order": [
+      "error",
+      { "alphabetize": { "order": "asc" }, "newlines-between": "always" }
+    ]
+  }
+}

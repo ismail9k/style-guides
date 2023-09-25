@@ -1,0 +1,29 @@
+{
+  "extends": [
+    // Basic ESLint recommended rules.
+    "eslint:recommended",
+    // TypeScript specific rules.
+    "plugin:@typescript-eslint/recommended",
+    // Rules for ES6+ import/export syntax and encforceing grouping and ordering
+    "plugin:import/recommended",
+    // Disables conflicting ESLint rules that Prettier covers.
+    "prettier"
+  ],
+  // "env" sets the environment, enabling global variables (e.g., for Node.js).
+  "env": { "node": true },
+  // Help esling to understand typescript files
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "import", "prettier"],
+  // This is important because TypeScript has more complex module resolution strategies
+  // than JavaScript, like path mapping in a tsconfig.json file.
+  "settings": { "import/resolver": "typescript" },
+  "rules": {
+    // Enforces Prettier formatting rules.
+    "prettier/prettier": "error",
+    // Enforces import order and alphabetizes them.
+    "import/order": [
+      "error",
+      { "alphabetize": { "order": "asc" }, "newlines-between": "always" }
+    ]
+  }
+}

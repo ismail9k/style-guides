@@ -1,11 +1,9 @@
 {
   "extends": [
-    // Basic ESLint recommended rules.
-    "eslint:recommended",
+    // Arbinb base configurations
+    "airbnb-base",
     // TypeScript specific rules.
     "plugin:@typescript-eslint/recommended",
-    // Rules for ES6+ import/export syntax and encforceing grouping and ordering
-    "plugin:import/recommended",
     // Disables conflicting ESLint rules that Prettier covers.
     "prettier"
   ],
@@ -13,14 +11,19 @@
   "env": { "node": true },
   // Help esling to understand typescript files
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint", "import", "prettier"],
+  "plugins": ["@typescript-eslint", "prettier"],
   // This is important because TypeScript has more complex module resolution strategies
   // than JavaScript, like path mapping in a tsconfig.json file.
   "settings": { "import/resolver": "typescript" },
   "rules": {
+    // Disapley requiring file extension in importing
+    "import/extensions": 0,
     // Enforces Prettier formatting rules.
     "prettier/prettier": "error",
     // Enforces import order and alphabetizes them.
-    "import/order": ["error", { "alphabetize": { "order": "asc" } }]
+    "import/order": [
+      "error",
+      { "alphabetize": { "order": "asc" }, "newlines-between": "always" }
+    ]
   }
 }

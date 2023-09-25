@@ -1,0 +1,24 @@
+{
+  "extends": [
+    // Basic ESLint recommended rules.
+    "eslint:recommended",
+    // Rules for ES6+ import/export syntax and enforcing grouping and ordering.
+    "plugin:import/recommended",
+    // Disables conflicting ESLint rules that Prettier covers.
+    "prettier"
+  ],
+  // "env" sets the environment, enabling global variables (e.g., for Node.js).
+  "env": { "node": true },
+  // Using default parser for JavaScript files.
+  "plugins": ["import", "prettier"],
+  // No TypeScript, so no special resolver settings needed.
+  "rules": {
+    // Enforces Prettier formatting rules.
+    "prettier/prettier": "error",
+    // Enforces import order and alphabetizes them.
+    "import/order": [
+      "error",
+      { "alphabetize": { "order": "asc" }, "newlines-between": "always" }
+    ]
+  }
+}
